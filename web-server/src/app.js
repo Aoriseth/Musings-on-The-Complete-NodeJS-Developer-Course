@@ -30,7 +30,7 @@ app.get("/weather",(req,res) => {
 			res.send({
 				searchAddress:req.query.address,
 				location,
-				forecastData
+				forecastData:forecastData.summary
 			})
 		})
 	});
