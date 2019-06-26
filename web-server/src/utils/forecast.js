@@ -10,9 +10,11 @@ const forecast = (latitude,longitude,callback) => {
 			callback("Unable to find forecast. Try another search",undefined)
 		}else {
 			callback(undefined,{
-				summary:body.daily.data[0].summary,
+				summary:body.daily.data[0].summary + " The high today will be "+body.daily.data[0].temperatureMax
+                    + " degrees. The low will be "
+                    +body.daily.data[0].temperatureMin+ " degrees." ,
 				temperature:body.currently.temperature,
-				rainChance:body.currently.precipProbability
+				rainChance:body.currently.precipProbability,
 			})
 		}
 	})
