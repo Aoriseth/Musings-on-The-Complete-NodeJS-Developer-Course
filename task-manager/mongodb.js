@@ -21,5 +21,9 @@ MongoClient.connect(connectionUrl,{useNewUrlParser:true},(error,client)=>{
 	db.collection('users').find({name:'Lennart'}).toArray((error,users)=>{
 		console.log(users)
 	})
+
+	db.collection('tasks').find({completed:false}).toArray((error,tasks)=>{
+		console.log(tasks)
+	})
 })
 
